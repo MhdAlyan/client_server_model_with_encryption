@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Files_transfeer_server</name>
+    </assembly>
+    <members>
+        <member name="M:Files_transfeer_server.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="M:Files_transfeer_server.sever.#ctor">
+            <summary>
+            initialization  Datamember for the Server
+            </summary>
+        </member>
+        <member name="M:Files_transfeer_server.sever.build_Table">
+            <summary>
+            Show the Connected Clients and Details for connected Clients 
+            </summary>
+        </member>
+        <member name="M:Files_transfeer_server.sever.run_threads">
+            <summary>
+            Thread that Generates Thread for Any Client you Want To Coonect With Server
+            using serverThread  in   Handle_Requset Class
+            </summary>
+        </member>
+        <member name="M:Files_transfeer_server.sever.send_file(System.Int32)">
+            <summary>
+            Send Any  File to The Endpoint 
+            </summary>
+            <param name="i">index of Client Socket in server_requests List </param>
+        </member>
+        <member name="M:Files_transfeer_server.sever.send_Text_Data(System.Int32)">
+            <summary>
+            Send Tex Data To EndPoint 
+            </summary>
+            <param name="i">index of Client Socket in server_requests List </param>
+        </member>
+        <member name="M:Files_transfeer_server.sever.GetIP">
+            <summary>
+            Get IP of this Computer 
+            </summary>
+            <returns>Get IP of this Computer  </returns>
+        </member>
+        <member name="F:Files_transfeer_server.sever.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Files_transfeer_server.sever.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Files_transfeer_server.sever.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Files_transfeer_server.Handle_Request">
+            <summary>
+             to build application As Server we have to :
+             1- object form Tcplistener(Class) 
+             2- object from Socket(Class) that takes object from Tcplistener By AcceptSocket() method ; 
+             3- object from Networkstream that tackes object from socket class 
+             4- two  object from streamreader and streamwriter  Or  BinaryReader and BinaryWritter ; each of this take object from newrorkstram(Class)    /// 
+            </summary>
+        </member>
+        <member name="M:Files_transfeer_server.Handle_Request.#ctor(System.Net.Sockets.TcpListener,System.Net.Sockets.Socket)">
+            <summary>
+            Costructor 
+            </summary>
+            <param name="port"> port number is Adderss of this  Aplication ; must be Uniq</param>
+            <param name="listener"> </param>
+            <param name="sock"> sock is Socket between Server And Client After the Server Accept the Clien Requset</param>
+        </member>
+        <member name="M:Files_transfeer_server.Handle_Request.start">
+            <summary>
+            Start Handle_Requset thread 
+            </summary>
+        </member>
+        <member name="M:Files_transfeer_server.Handle_Request.RunServer">
+            <summary>
+            The Most important method in this Class ;
+            this Method is invoked by serverThread 
+            </summary>
+        </member>
+        <member name="T:Files_transfeer_server.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Files_transfeer_server.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Files_transfeer_server.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
